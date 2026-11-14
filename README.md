@@ -8,9 +8,9 @@ Plateforme web de gestion des notes : saisie des notes par les professeurs, calc
 | Membre | Rôle dans le projet |
 |---|---|
 | Dounia Zirari | À compléter |
-| [Prénom Nom de votre collègue] | À compléter |
+| Oumayma Bouakline | À compléter |
 
-Encadrant : [Nom du professeur]
+Encadrant : M.Mohcine boukssim
 
 ## Technologies
 
