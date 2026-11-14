@@ -28,7 +28,6 @@ Encadrant : M.Mohcine boukssim
 
 ## Diagramme de cas d'utilisation
 
-Les trois acteurs principaux (étudiant, professeur, administrateur) sont à gauche. Chaque fonctionnalité inclut le cas « S'authentifier ». Le calcul des moyennes est inclus dans la validation et la publication des notes.
 
 ```mermaid
 flowchart LR
@@ -79,9 +78,7 @@ flowchart LR
     A4 -.->|"«include»"| AUTH
 ```
 
-Version dessinée du même diagramme, avec en plus la relation « extend » entre le téléchargement du relevé et la consultation des notes :
 
-![Diagramme de cas d'utilisation](docs/use-case.svg)
 
 ## Diagramme de classes
 
@@ -172,53 +169,21 @@ classDiagram
     Module "1" --> "0..*" Note : concerne
 ```
 
-Remarque : les diagrammes Mermaid sont dessinés par GitHub à partir de leur code texte. Ils servent uniquement à la documentation et ne font pas partie de l'application.
 
 ## Structure du projet
 
 ```
 gestion-notes-faculte/
-├── app.py                 # programme principal en Python
+├── app.py                
 ├── database/
-│   └── schema.sql         # création de la base MySQL
-├── templates/             # pages HTML
+│   └── schema.sql        
+├── templates/            
 ├── static/
-│   └── css/style.css      # styles CSS
+│   └── css/style.css      
 ├── .gitignore
 └── README.md
 ```
 
-## Installation
-
-1. Cloner le dépôt :
-   ```bash
-   git clone <lien-HTTPS-du-depot>
-   cd gestion-notes-faculte
-   ```
-2. Créer la base de données (MySQL 8.0.16 ou plus récent) :
-   ```bash
-   mysql -u root -p < database/schema.sql
-   ```
-3. Installer le connecteur MySQL pour Python :
-   ```bash
-   pip install mysql-connector-python
-   ```
-4. Copier `config.example.py` en `config.py` et y renseigner les paramètres de connexion MySQL.
-   Le fichier `config.py` ne doit **jamais** être envoyé sur GitHub.
-5. Lancer l'application :
-   ```bash
-   python app.py
-   ```
-
-## Règle de calcul de la moyenne
-
-```
-moyenne = note_cc × coef_cc + note_tp × coef_tp + note_exam × coef_exam
-```
-
-- `V` (validé) : moyenne supérieure ou égale à 10
-- `RAT` (rattrapage) : moyenne inférieure à 10, rattrapage possible
-- `NV` (non validé) : moyenne toujours inférieure à 10 après le rattrapage
 
 ## Répartition des tâches
 
